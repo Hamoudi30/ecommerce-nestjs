@@ -7,14 +7,16 @@ import { Model } from 'mongoose';
 
 @Injectable()
 export class UserService {
-	constructor(@InjectModel(User.name) private readonly userModel: Model<User>) {}
+	constructor(
+		@InjectModel(User.name) private readonly userModel: Model<User>
+	) {}
 
-  create(createUserDto: CreateUserDto) {
-    return this.userModel.create(createUserDto);
+	create(createUserDto: CreateUserDto) {
+		return this.userModel.create(createUserDto);
 	}
 
 	findAll() {
-    return this.userModel.find();
+		return this.userModel.find();
 	}
 
 	findOne(id: number) {
