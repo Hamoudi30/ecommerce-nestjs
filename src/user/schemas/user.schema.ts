@@ -13,66 +13,67 @@ export class User {
 	})
 	name: string;
 
-  @Prop({
-    type: String,
-    required: true,
-    unique: true,
-  })
-  email: string; 
+	@Prop({
+		type: String,
+		required: true,
+		unique: true,
+	})
+	email: string;
 
-  @Prop({
-    type: String,
-    required: true,
-    min: [6, 'Password is too short'],
-    max: [30, 'Password is too long'],
-  })
-  password: string;
+	@Prop({
+		type: String,
+		required: true,
+		min: [6, 'Password is too short'],
+		max: [30, 'Password is too long'],
+	})
+	password: string;
 
-  @Prop({
-    type: String,
-    required: true,
-    default: 'user',
-    enum: ['user', 'admin'],
-  })
-  role: string;
+	@Prop({
+		type: String,
+		required: true,
+		default: 'user',
+		enum: ['user', 'admin'],
+	})
+	role: string;
 
-  @Prop({
-    type: String
-  })
-  avatar: string;
+	@Prop({
+		type: String,
+	})
+	avatar: string;
 
-  @Prop({
-    type: Number,
-  })
-  age: number;
+	@Prop({
+		type: Number,
+	})
+	age: number;
 
-  @Prop({
-    type: String,
-  })
-  phoneNumber: string;
+	@Prop({
+		type: String,
+	})
+	phoneNumber: string;
 
-  @Prop({
-    type: String,
-  })
-  address: string;
+	@Prop({
+		type: String,
+	})
+	address: string;
 
-  @Prop({
-    type: Boolean,
-    enum: [true, false],
-  })
-  isActive: boolean;
+	@Prop({
+		type: Boolean,
+		enum: [true, false],
+	})
+	isActive: boolean;
 
-  @Prop({
-    type: String,
-  })
-  verificationCode:   string;
-  
-  @Prop({
-    type: String,
-    enum: ['male', 'female'],
-  })
-  gender: string;
+	@Prop({
+		type: String,
+		required: true,
+	})
+	verificationCode: string;
 
+	@Prop({
+		type: String,
+		enum: ['male', 'female'],
+		required: true,
+	})
+	gender: string;
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);
